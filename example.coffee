@@ -18,9 +18,6 @@ module.exports = (robot) ->
 	  'щ(ﾟдﾟщ)ｶﾓｰﾝ'
   ]
 
-  robot.hear /^hello$/m, (res) ->
-    res.send "HELLO!!!"
-
   robot.hear /^e$/m, (res) ->
     res.send "工ｴｴｪｪ(´д｀)ｪｪｴｴ工"
 
@@ -81,6 +78,13 @@ module.exports = (robot) ->
 
   robot.hear /^ok$/m, (res) ->
     res.send "ヽ(^o^)丿　OKOK!"
+
+  robot.hear /^yy$/m, (res) ->
+    res.send "ヽ(^。^)ノﾜｲﾜｲヽ(^。^)ノﾜｲﾜｲ"
+
+  robot.hear /^oha$/m, (res) ->
+    res.send "(๑•̀ㅁ•́๑)ohayou"
+
 
 
   # robot.hear /badger/i, (res) ->
