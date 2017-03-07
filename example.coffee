@@ -18,6 +18,9 @@ module.exports = (robot) ->
 	  'щ(ﾟдﾟщ)ｶﾓｰﾝ'
   ]
 
+  robot.hear /^こんにちわ$/m, (res) ->
+    res.send "8時になりました"
+
   robot.hear /^e$/m, (res) ->
     res.send "工ｴｴｪｪ(´д｀)ｪｪｴｴ工"
 
