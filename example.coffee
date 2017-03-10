@@ -9,6 +9,13 @@
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
 #Commands:
+
+# 時刻を受け取ってhh:mm形式で返す
+tohhmmTime = (date) ->
+  hh = ('0' + date.getHours()).slice(-2)
+  mm = ('0' + date.getMinutes()).slice(-2)
+  return "#{hh}:#{mm}"
+
 module.exports = (robot) ->
 
   k_messages = [
@@ -18,8 +25,12 @@ module.exports = (robot) ->
 	  'щ(ﾟдﾟщ)ｶﾓｰﾝ'
   ]
 
-  robot.hear /^こんにちわ$/m, (res) ->
-    res.send "8時になりました"
+  robot.hear /^test$/m, (res) ->
+    # 発言から内容を取得。date,text,userの3つ
+    date = new Date
+    text = res.match[1]
+    user = res.message.user.name
+    res.send "#{tohhmmTime(date)}になりました"
 
   robot.hear /^e$/m, (res) ->
     res.send "工ｴｴｪｪ(´д｀)ｪｪｴｴ工"
@@ -84,10 +95,6 @@ module.exports = (robot) ->
 
   robot.hear /^yy$/m, (res) ->
     res.send "ヽ(^。^)ノﾜｲﾜｲヽ(^。^)ノﾜｲﾜｲ"
-
-  robot.hear /^oha$/m, (res) ->
-    res.send "(๑•̀ㅁ•́๑)ohayou"
-
 
 
   # robot.hear /badger/i, (res) ->
